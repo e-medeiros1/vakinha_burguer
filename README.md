@@ -1,2 +1,2 @@
-# Vakinha-Burguer  
-Aplicativo de compra de produto usando Getx e Qr Code funcional  
+# Vakinha Burguer  
+Aplicativo de delivery usando Getx e pagamento por pix funcional  

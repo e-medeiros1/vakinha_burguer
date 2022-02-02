@@ -25,18 +25,32 @@ class AuthService extends GetxService {
     //Adicionando workers
     ever<bool?>(_isLogged, (isLogged) {
       //Se não estiver logado, volta para tela de login
-      Get.offAllNamed('/auth/login');
+      if (isLogged == null || !isLogged) {
+        Get.offAllNamed('/auth/login');
+      } else {
+        //Caso esteja logado, vai pra página home
+        //Método semelhante ao Navigator.of(context).popAndRemoveUntil();
+        //Remove toda a árvore de telas e devolve só a '/home'
+        Get.offAllNamed('/home');
+      }
     });
+    //Código didático
+    final isLoggedData = getUserId() != null;
+    _isLogged(isLoggedData);
+    return (this);
+
+    //Código refinado
+    // _isLogged(getUserId() != null);
   }
 
   //Método de logout
   void logout() {
     //Escreve no getStorage que a User_key é nula
     _getStorage.write(Constants.USER_KEY, null);
+  }
 
-    int? getUserId() {
-      //Lê a minha user_key
-      _getStorage.read(Constants.USER_KEY);
-    }
+  int? getUserId() {
+    //Lê a minha user_key
+    _getStorage.read(Constants.USER_KEY);
   }
 }

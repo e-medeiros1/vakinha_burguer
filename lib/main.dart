@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vakinha/app/core/bindings/application_binding.dart';
 import 'package:vakinha/app/core/ui/vakinha_ui.dart';
 import 'package:vakinha/app/routes/auth_routes.dart';
 import 'package:vakinha/app/routes/splash_routes.dart';
@@ -20,6 +21,8 @@ class VakinhaBurguerMainApp extends StatelessWidget {
       title: 'Vakinha Burger',
       //Adicionando o tema
       theme: VakinhaUI.theme,
+      //Inicia o binding na hora que inicia a aplicação
+      initialBinding: ApplicationBinding(),
       //Trabalhando com rotas no Getx
       getPages: [
         ...SplashRoutes.routers,

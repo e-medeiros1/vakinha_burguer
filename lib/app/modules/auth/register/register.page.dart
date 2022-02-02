@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
+
+
+import 'package:get/get.dart';
+
 import 'package:vakinha/app/core/ui/vakinha_state.dart';
 import 'package:vakinha/app/core/ui/widgets/vakinha_appbar.dart';
-import 'package:get/get.dart';
 import 'package:vakinha/app/core/ui/widgets/vakinha_button.dart';
+
+
 import 'package:vakinha/app/core/ui/widgets/vakinha_textformfield.dart';
+
+
+
 import 'package:vakinha/app/modules/auth/register/register_controller.dart';
 import 'package:validatorless/validatorless.dart';
 
 class RegisterPage extends StatefulWidget {
+
+
+  //Quando temos campos em tela, precisamos do textEditingController, então
+  //converte-se a classe paga StatefulWidget
+
   const RegisterPage({Key? key}) : super(key: key);
 
   @override
@@ -16,10 +29,17 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState
     extends VakinhaState<RegisterPage, RegisterController> {
+
+
+  // var controller = Get.find<RegisterController>();
+
+
   final _formKey = GlobalKey<FormState>();
   final _nameEC = TextEditingController();
   final _emailEC = TextEditingController();
   final _passwordEC = TextEditingController();
+
+
 
 
   @override
@@ -27,6 +47,9 @@ class _RegisterPageState
     _nameEC.dispose();
     _emailEC.dispose();
     _passwordEC.dispose();
+
+
+
     super.dispose();
   }
 
@@ -60,44 +83,60 @@ class _RegisterPageState
                     height: 30,
                   ),
                   VakinhaTextFormField(
-                    label: 'Nome',
+
+ 
+
+                    label: 'Nome*',
                     controller: _nameEC,
-                    validator: Validatorless.required('Nome Obrigatório'),
+                    validator: Validatorless.required('Nome obrigatório'),
+
                   ),
                   const SizedBox(
                     height: 30,
                   ),
                   VakinhaTextFormField(
-                    label: 'E-mail',
+
+                  
+
+                    label: 'E-mail*',
                     controller: _emailEC,
                     validator: Validatorless.multiple([
                       Validatorless.required('E-mail obrigatório'),
-                      Validatorless.email('E-mail inválido')
+                      Validatorless.email('E-mail inválido'),
+
                     ]),
                   ),
                   const SizedBox(
                     height: 30,
                   ),
                   VakinhaTextFormField(
-                    label: 'Senha',
+
+    
+
+                    obscureText: true,
+                    label: 'Senha*',
                     controller: _passwordEC,
-                    obscureText: true,
                     validator: Validatorless.multiple([
-                      Validatorless.required('Senha obrigatório'),
+                      Validatorless.required('Senha obrigatória'),
                       Validatorless.min(
-                          6, 'Senha deve conter pelo menos 6 caracteres'),
+                          6, 'A senha deve conter no mínimo 6 caracteres')
+
                     ]),
                   ),
                   const SizedBox(
                     height: 30,
                   ),
                   VakinhaTextFormField(
-                    label: 'Confirma senha',
+
+
                     obscureText: true,
+                    label: 'Confirmar senha*',
                     validator: Validatorless.multiple([
-                      Validatorless.required('Confirma senha obrigatória'),
+                      Validatorless.required(
+                          'Confirmação de senha obrigatória'),
                       Validatorless.compare(
-                          _passwordEC, 'Senha diferente de confirma senha'),
+                          _passwordEC, 'As senhas não coincidem')
+
                     ]),
                   ),
                   const SizedBox(
@@ -105,8 +144,10 @@ class _RegisterPageState
                   ),
                   Center(
                     child: VakinhaButton(
-                      widht: double.infinity,
-                      label: 'Cadastrar',
+
+                      label: 'CADASTRAR',
+                      widht: context.width,
+
                       onPressed: () {
                         final formValid =
                             _formKey.currentState?.validate() ?? false;

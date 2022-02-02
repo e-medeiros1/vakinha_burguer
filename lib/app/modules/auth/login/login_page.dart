@@ -4,7 +4,11 @@ import 'package:vakinha/app/core/ui/vakinha_state.dart';
 import 'package:vakinha/app/core/ui/vakinha_ui.dart';
 import 'package:vakinha/app/core/ui/widgets/vakinha_appbar.dart';
 import 'package:vakinha/app/core/ui/widgets/vakinha_button.dart';
+
 import 'package:vakinha/app/core/ui/widgets/vakinha_textformfield.dart';
+
+
+
 import 'package:vakinha/app/modules/auth/login/login_controller.dart';
 import 'package:validatorless/validatorless.dart';
 
@@ -22,9 +26,15 @@ class _LoginPageState extends VakinhaState<LoginPage, LoginController> {
 
   @override
   void dispose() {
+
     super.dispose();
     _emailEC.dispose();
     _passwordEC.dispose();
+
+    _emailEC.dispose();
+    _passwordEC.dispose();
+    super.dispose();
+
   }
 
   @override
@@ -33,6 +43,7 @@ class _LoginPageState extends VakinhaState<LoginPage, LoginController> {
       appBar: VakinhaAppBar(
         elevation: 0,
       ),
+
       backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (_, constraints) {
@@ -123,6 +134,7 @@ class _LoginPageState extends VakinhaState<LoginPage, LoginController> {
           );
         },
       ),
+      
     );
   }
 }

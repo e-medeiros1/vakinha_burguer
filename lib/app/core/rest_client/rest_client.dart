@@ -1,19 +1,19 @@
 import 'package:get/get.dart';
 
 class RestClient extends GetConnect {
-  final _backendBaseUlr = 'http://dartweek.academiadoflutter.com.br/';
+  final _backendBaseUrl = 'http://dartweek.academiadoflutter.com.br';
 
   RestClient() {
-    httpClient.baseUrl = _backendBaseUlr;
+    httpClient.baseUrl = _backendBaseUrl;
   }
 }
 
-class RestClienteException implements Exception {
+class RestClientException implements Exception {
   final int? code;
   final String message;
 
-  RestClienteException(this.message, {this.code});
+  RestClientException(this.message, {this.code});
 
   @override
-  String toString() => 'RestClientException(code: $code, message: $message)';
+  String toString() => "RestClientException(code: $code, menssage: $message)";
 }

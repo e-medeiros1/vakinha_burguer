@@ -11,15 +11,15 @@ class AuthService extends GetxService {
   Future<AuthService> init() async {
     //Criando listener que fica escutando a UserKey
     _getStorage.listenKey(Constants.USER_KEY, (value) {
-      if (value != null) {
-        _isLogged == true;
-      } else {
-        _isLogged == false;
-      }
+      // if (value != null) {
+      //   _isLogged == true;
+      // } else {
+      //   _isLogged == false;
+      // }
 
       //Método mais refinado
       //Se value for diferente de null ele é true
-      // _isLogged(value != null);
+      _isLogged(value != null);
     });
 
     //Adicionando workers
@@ -37,7 +37,7 @@ class AuthService extends GetxService {
     //Código didático
     final isLoggedData = getUserId() != null;
     _isLogged(isLoggedData);
-    return (this);
+    return this;
 
     //Código refinado
     // _isLogged(getUserId() != null);

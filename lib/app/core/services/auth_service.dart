@@ -21,6 +21,12 @@ class AuthService extends GetxService {
       //Se value for diferente de null ele é true
       // _isLogged(value != null);
     });
+
+    //Adicionando workers
+    ever<bool?>(_isLogged, (isLogged) {
+      //Se não estiver logado, volta para tela de login
+      Get.offAllNamed('/auth/login');
+    });
   }
 
   //Método de logout

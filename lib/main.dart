@@ -7,6 +7,8 @@ import 'package:vakinha/app/core/ui/vakinha_ui.dart';
 import 'package:vakinha/app/routes/auth_routes.dart';
 import 'package:vakinha/app/routes/splash_routes.dart';
 
+import 'app/routes/home_routes.dart';
+
 Future<void> main(List<String> args) async {
   await GetStorage.init();
   runApp(const VakinhaBurguerMainApp());
@@ -29,6 +31,7 @@ class VakinhaBurguerMainApp extends StatelessWidget {
       getPages: [
         ...SplashRoutes.routers,
         ...AuthRoutes.routers,
+        ...HomeRoutes.routers,
       ],
     );
   }

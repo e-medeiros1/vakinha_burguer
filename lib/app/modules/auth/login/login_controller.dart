@@ -21,7 +21,6 @@ class LoginController extends GetxController with LoaderMixin, MessagesMixin {
   @override
   void onInit() {
     super.onInit();
-
     loaderListener(_loading);
     messageListener(_message);
   }
@@ -32,26 +31,22 @@ class LoginController extends GetxController with LoaderMixin, MessagesMixin {
       final userLogged = await _authRepository.login(email, password);
 
       final storage = GetStorage();
-
       storage.write(Constants.USER_KEY, userLogged.id);
-
       _loading.toggle();
     } on UserNotFoundException catch (e, s) {
       _loading.toggle();
       log('Login ou senha inválidos', error: e, stackTrace: s);
       _message(MessageModel(
-        title: 'Erro!',
-        message: 'Login ou senha inválidos',
-        type: MessageType.error,
-      ));
+          title: 'Erro',
+          message: 'Login ou senha inválidos',
+          type: MessageType.error));
     } catch (e, s) {
       _loading.toggle();
       log('Erro ao realizar login', error: e, stackTrace: s);
       _message(MessageModel(
-        title: 'Erro!',
-        message: 'Erro ao realizar login',
-        type: MessageType.error,
-      ));
+          title: 'Erro',
+          message: 'Erro ao realizar login',
+          type: MessageType.error));
     }
   }
 }

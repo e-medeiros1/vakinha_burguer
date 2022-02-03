@@ -28,10 +28,10 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     Container(
                       width: context.width,
                       height: context.heightTransformer(reducedBy: 50),
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(
-                              'https://hamburguerdesucesso.com.br/wp-content/uploads/2021/05/lanches-mais-vendidos-no-brasil.jpg',
+                              'http://dartweek.academiadoflutter.com.br/images${controller.product.image}',
                             ),
                             fit: BoxFit.cover),
                       ),
@@ -41,8 +41,8 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Text('X-TUDÃO',
-                          style: context.textTheme.headline4?.copyWith(
+                      child: Text(controller.product.name,
+                          style: context.textTheme.headline4!.copyWith(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                           )),
@@ -50,31 +50,35 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: Text(
-                        'Contém muita coisa',
+                        controller.product.description,
                         style: context.textTheme.bodyText2!,
                       ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    PlusMinusBox(
-                      minusCallback: () {},
-                      plusCallback: () {},
-                      price: 22.00,
-                      quantity: 1,
-                      backgroundColor: Colors.black12,
-                      // label: 'XTudo',
-                    ),
+                    Obx(() {
+                      return PlusMinusBox(
+                        minusCallback: () => controller.removeProduct(),
+                        plusCallback: () => controller.addProduct(),
+                        price: controller.product.price,
+                        quantity: controller.quantity,
+
+                        // label: 'XTudo',
+                      );
+                    }),
                     const Divider(),
                     ListTile(
                       title: const Text(
                         'Total',
                         style: VakinhaUI.textBold,
                       ),
-                      trailing: Text(
-                        FormatterHelper.formatCurrency(22.00),
-                        style: VakinhaUI.textBold,
-                      ),
+                      trailing: Obx(() {
+                        return Text(
+                          FormatterHelper.formatCurrency(controller.totalPrice),
+                          style: VakinhaUI.textBold,
+                        );
+                      }),
                     ),
                     const SizedBox(
                       height: 20,

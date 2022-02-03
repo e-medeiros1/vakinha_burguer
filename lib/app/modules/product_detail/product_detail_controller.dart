@@ -7,6 +7,7 @@ class ProductDetailController extends GetxController {
   final _totalPrice = 0.0.obs;
   final _quantity = 1.obs;
   final ShoppingCardService _shoppingCardService;
+  final _alreadyAdded = false.obs;
 
   ProductDetailController({required shoppingCardService})
       : _shoppingCardService = shoppingCardService;
@@ -14,6 +15,7 @@ class ProductDetailController extends GetxController {
   ProductModel get product => _product.value;
   double get totalPrice => _totalPrice.value;
   int get quantity => _quantity.value;
+  bool get alreadyAdded => _alreadyAdded.value;
 
   @override
   void onInit() {
@@ -24,7 +26,12 @@ class ProductDetailController extends GetxController {
       _totalPrice(product.price * quantity);
     });
 
- 
+    final productShoppingCard = _shoppingCardService.getById(product.id);
+
+    if (productShoppingCard != null) {
+      _quantity(productShoppingCard.quantity);
+      _alreadyAdded(true);
+    }
     //Reatividade: Worker que toda vez que _quantity for alterado,
     //será feito uma atualização do _totalPrice
   }

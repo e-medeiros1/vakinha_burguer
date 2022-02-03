@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:vakinha/app/core/ui/formatter_helper.dart';
 import 'package:vakinha/app/core/ui/vakinha_ui.dart';
+import 'package:vakinha/app/core/ui/widgets/plus_minus_box.dart';
 import 'package:vakinha/app/core/ui/widgets/vakinha_appbar.dart';
 import 'package:vakinha/app/core/ui/widgets/vakinha_button.dart';
 import './product_detail_controller.dart';
@@ -40,7 +41,7 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Text('BURG',
+                      child: Text('X-TUDÃO',
                           style: context.textTheme.headline4?.copyWith(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -49,16 +50,20 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: Text(
-                        'Contém muita coisa, alimenta o sua gatinha',
+                        'Contém muita coisa',
                         style: context.textTheme.bodyText2!,
                       ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 20.0),
-                      child: Text('BOTÃO'),
+                    PlusMinusBox(
+                      minusCallback: () {},
+                      plusCallback: () {},
+                      price: 22.00,
+                      quantity: 1,
+                      backgroundColor: Colors.black12,
+                      // label: 'XTudo',
                     ),
                     const Divider(),
                     ListTile(

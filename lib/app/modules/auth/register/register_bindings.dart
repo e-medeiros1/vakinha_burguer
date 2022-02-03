@@ -6,6 +6,13 @@ import 'package:vakinha/app/repositories/auth/auth_repository_impl.dart';
 class RegisterBindings implements Bindings {
   @override
   void dependencies() {
+    Get.lazyPut<AuthRepository>(
+        () => AuthRepositoryImpl(restClient: Get.find()));
+
+    Get.lazyPut(() => RegisterController(authRepository: Get.find()));
+  }
+}
+
     //A dependencie é o repository - Ao apertar o botão de cadastrar, ele vai
     //chamar o repository e o repository vai chamar o backend
 
@@ -18,16 +25,3 @@ class RegisterBindings implements Bindings {
     //não pode ficar dentro do próprio binding
 
     //Get.find para recuperar o restClient
-    Get.lazyPut<AuthRepository>(
-      () => AuthRepositoryImpl(
-        restClient: Get.find(),
-      ),
-    );
-
-    Get.lazyPut(
-      () => RegisterController(
-        authRepository: Get.find(),
-      ),
-    );
-  }
-}

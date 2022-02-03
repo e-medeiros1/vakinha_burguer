@@ -28,22 +28,18 @@ class SplashPage extends GetView<SplashController> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: context.heightTransformer(
-                      reducedBy: 85,
-                    ),
+                    height: context.heightTransformer(reducedBy: 85),
                   ),
                   Image.asset('assets/images/logo.png'),
                   const SizedBox(
                     height: 60,
                   ),
                   VakinhaButton(
-                    label: 'ACESSAR',
-                    onPressed: () {
-                      controller.checkLogged();
-                    },
-                    widht: context.widthTransformer(reducedBy: 40),
-                    height: 40,
-                  ),
+                    label: "ACESSAR",
+                    height: 35,
+                    widht: context.heightTransformer(reducedBy: 50),
+                    onPressed: () => controller.checkLogged(),
+                  )
                 ],
               ),
             )

@@ -11,7 +11,6 @@ import 'package:vakinha/app/repositories/auth/auth_repository.dart';
 class RegisterController extends GetxController
     with LoaderMixin, MessagesMixin {
   final AuthRepository _authRepository;
-
   final _loading = false.obs;
   final _message = Rxn<MessageModel>();
 
@@ -23,7 +22,7 @@ class RegisterController extends GetxController
   void onInit() {
     loaderListener(_loading);
     messageListener(_message);
-    super.onInit();
+    super.onInit;
   }
 
   Future<void> register({
@@ -33,37 +32,37 @@ class RegisterController extends GetxController
   }) async {
     try {
       _loading.toggle();
+
       final userLogged = await _authRepository.register(name, email, password);
+
       _loading.toggle();
-      // TODO: Voltar quando fizer o login
 
       GetStorage().write(Constants.USER_KEY, userLogged.id);
 
-      // Get.back();
-      // _message(
-      //   MessageModel(
-      //     title: 'Sucesso',
-      //     message: 'Cadastro realizado com sucesso',
-      //     type: MessageType.info,
-      //   ),
-      // );
+      /*_message(
+        MessageModel(
+          title: 'Informação',
+          message: 'Registro realizado com sucesso',
+          type: MessageType.info,
+        ),
+      );*/
+
     } on RestClientException catch (e, s) {
       _loading.toggle();
-      log('Erro ao registrar usuário', error: e, stackTrace: s);
+      log('Erro ao registrar o usuário', error: e, stackTrace: s);
       _message(
         MessageModel(
-          title: 'Erro!',
-          message: e.message,
+          title: 'Erro',
+          message: e.message.toString(),
           type: MessageType.error,
         ),
       );
     } catch (e, s) {
-      _loading.toggle();
-      log('Erro ao registrar usuário', error: e, stackTrace: s);
+      log('Erro ao registrar o usuário', error: e, stackTrace: s);
       _message(
         MessageModel(
-          title: 'Erro!',
-          message: 'Erro ao registrar usuário',
+          title: 'Erro',
+          message: 'Erro ao registrar o usuário',
           type: MessageType.error,
         ),
       );

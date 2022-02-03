@@ -35,12 +35,12 @@ class AuthService extends GetxService {
       }
     });
     //Código didático
-    final isLoggedData = getUserId() != null;
-    _isLogged(isLoggedData);
-    return this;
+    // final isLoggedData = getUserId() != null;
+    // _isLogged(isLoggedData);
 
     //Código refinado
-    // _isLogged(getUserId() != null);
+    _isLogged(getUserId() != null);
+    return this;
   }
 
   //Método de logout
@@ -49,8 +49,6 @@ class AuthService extends GetxService {
     _getStorage.write(Constants.USER_KEY, null);
   }
 
-  int? getUserId() {
-    //Lê a minha user_key
-    _getStorage.read(Constants.USER_KEY);
-  }
+//Lê a minha user_key
+  int? getUserId() => _getStorage.read(Constants.USER_KEY);
 }

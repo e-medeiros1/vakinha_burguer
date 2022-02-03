@@ -1,10 +1,15 @@
 import 'package:get/get.dart';
+import 'package:vakinha/app/core/services/shopping_card_service.dart';
 import 'package:vakinha/app/models/product_model.dart';
 
 class ProductDetailController extends GetxController {
   final _product = Rx<ProductModel>(Get.arguments);
   final _totalPrice = 0.0.obs;
   final _quantity = 1.obs;
+  final ShoppingCardService _shoppingCardService;
+
+  ProductDetailController({required shoppingCardService})
+      : _shoppingCardService = shoppingCardService;
 
   ProductModel get product => _product.value;
   double get totalPrice => _totalPrice.value;
@@ -19,6 +24,7 @@ class ProductDetailController extends GetxController {
       _totalPrice(product.price * quantity);
     });
 
+ 
     //Reatividade: Worker que toda vez que _quantity for alterado,
     //será feito uma atualização do _totalPrice
   }
@@ -31,6 +37,12 @@ class ProductDetailController extends GetxController {
     if (_quantity > 1) {
       _quantity.value -= 1;
     }
+  }
+
+  void addProductinShoppingCard() {
+    _shoppingCardService.addAndRemoveProductInShoppingCard(product,
+        quantity: quantity);
+    Get.back();
   }
 }
 

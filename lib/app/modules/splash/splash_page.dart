@@ -28,7 +28,7 @@ class SplashPage extends GetView<SplashController> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: context.heightTransformer(reducedBy: 85),
+                    height: context.heightTransformer(reducedBy: 83),
                   ),
                   Image.asset('assets/images/logo.png'),
                   const SizedBox(
@@ -37,7 +37,7 @@ class SplashPage extends GetView<SplashController> {
                   VakinhaButton(
                     label: "ACESSAR",
                     height: 35,
-                    widht: context.heightTransformer(reducedBy: 50),
+                    widht: context.heightTransformer(reducedBy: 55),
                     onPressed: () => controller.checkLogged(),
                   )
                 ],

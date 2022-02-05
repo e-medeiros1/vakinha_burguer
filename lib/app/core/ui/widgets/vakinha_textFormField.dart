@@ -28,8 +28,8 @@ class VakinhaTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: true,
         labelText: label,
-        labelStyle: TextStyle(color: Colors.black),
-        errorStyle: TextStyle(color: Colors.redAccent),
+        labelStyle: const TextStyle(color: Colors.black54),
+        errorStyle: const TextStyle(color: Colors.redAccent),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(23),
           borderSide: BorderSide(color: Colors.grey[400]!),
@@ -44,7 +44,6 @@ class VakinhaTextFormField extends StatelessWidget {
         ),
         filled: true,
         fillColor: Colors.white,
-        
       ),
     );
   }

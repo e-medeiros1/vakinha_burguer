@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:vakinha/app/core/services/auth_service.dart';
+
+import 'package:vakinha/app/core/ui/widgets/icon_badge.dart';
 import 'package:vakinha/app/core/ui/widgets/vakinha_appbar.dart';
 import './home_controller.dart';
 
@@ -13,14 +14,22 @@ class HomePage extends GetView<HomeController> {
       appBar: VakinhaAppBar(),
       bottomNavigationBar: Obx(() {
         return BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
+          selectedIconTheme: const IconThemeData(
+            size: 30,
+          ),
+          enableFeedback: true,
+          showUnselectedLabels: false,
+          items: [
+            const BottomNavigationBarItem(
                 icon: Icon(Icons.list_rounded), label: 'Produtos'),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined),
+              icon: IconBadge(
+                icon: Icons.shopping_cart_outlined,
+                number: controller.totalProductsInShoppingCard,
+              ),
               label: 'Carrinho',
             ),
-            BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.exit_to_app),
               label: 'Sair',
             ),

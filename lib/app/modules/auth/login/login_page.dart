@@ -44,7 +44,7 @@ class _LoginPageState extends VakinhaState<LoginPage, LoginController> {
               ),
               child: IntrinsicHeight(
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(25.0),
                   child: Form(
                     key: _formKey,
                     child: Column(
@@ -53,11 +53,13 @@ class _LoginPageState extends VakinhaState<LoginPage, LoginController> {
                         Text(
                           'Login',
                           style: context.textTheme.headline6?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: context.theme.primaryColorDark),
+                            fontWeight: FontWeight.w800,
+                            color: context.theme.primaryColorDark,
+                            fontSize: 30,
+                          ),
                         ),
                         const SizedBox(
-                          height: 30,
+                          height: 35,
                         ),
                         VakinhaTextFormField(
                           label: 'E-mail',
@@ -81,7 +83,7 @@ class _LoginPageState extends VakinhaState<LoginPage, LoginController> {
                           ]),
                         ),
                         const SizedBox(
-                          height: 50,
+                          height: 60,
                         ),
                         Center(
                           child: VakinhaButton(
@@ -103,14 +105,18 @@ class _LoginPageState extends VakinhaState<LoginPage, LoginController> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text('Não possui uma conta?'),
+                            const Text(
+                              'Não possui uma conta?',
+                              style: TextStyle(fontSize: 15),
+                            ),
                             TextButton(
                               onPressed: () {
                                 Get.toNamed('/auth/register');
                               },
-                              child: const Text(
+                              child: Text(
                                 'Cadastre-se',
-                                style: VakinhaUI.textBold,
+                                style:
+                                    VakinhaUI.textBold.copyWith(fontSize: 15),
                               ),
                             ),
                           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vakinha/app/core/ui/vakinha_ui.dart';
 
 class VakinhaAppBar extends AppBar {
   VakinhaAppBar({
@@ -11,8 +12,8 @@ class VakinhaAppBar extends AppBar {
           centerTitle: true,
           title: Image.asset(
             'assets/images/logo.png',
-            width: 100,
+            width: 105,
           ),
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: VakinhaUI.theme.primaryColorDark),
         );
 }

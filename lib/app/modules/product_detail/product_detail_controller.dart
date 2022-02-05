@@ -9,8 +9,9 @@ class ProductDetailController extends GetxController {
   final ShoppingCardService _shoppingCardService;
   final _alreadyAdded = false.obs;
 
-  ProductDetailController({required shoppingCardService})
-      : _shoppingCardService = shoppingCardService;
+  ProductDetailController({
+    required ShoppingCardService shoppingCardService,
+  }) : _shoppingCardService = shoppingCardService;
 
   ProductModel get product => _product.value;
   double get totalPrice => _totalPrice.value;
@@ -32,8 +33,6 @@ class ProductDetailController extends GetxController {
       _quantity(productShoppingCard.quantity);
       _alreadyAdded(true);
     }
-    //Reatividade: Worker que toda vez que _quantity for alterado,
-    //será feito uma atualização do _totalPrice
   }
 
   void addProduct() {
@@ -46,11 +45,12 @@ class ProductDetailController extends GetxController {
     }
   }
 
-  void addProductinShoppingCard() {
+  void addProductInShoppingCard() {
     _shoppingCardService.addAndRemoveProductInShoppingCard(product,
         quantity: quantity);
     Get.back();
   }
 }
+
 
 //Faz com que os products estejam disponíveis

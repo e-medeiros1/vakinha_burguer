@@ -27,7 +27,7 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                   children: [
                     Container(
                       width: context.width,
-                      height: context.heightTransformer(reducedBy: 50),
+                      height: context.heightTransformer(reducedBy: 55),
                       decoration: BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(
@@ -37,10 +37,10 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 8,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Text(controller.product.name,
                           style: context.textTheme.headline4!.copyWith(
                             color: Colors.black,
@@ -48,7 +48,7 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                           )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: Text(
                         controller.product.description,
                         style: context.textTheme.bodyText2!,
@@ -69,19 +69,22 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                     }),
                     const Divider(),
                     ListTile(
-                      title: const Text(
+                      title: Text(
                         'Total',
-                        style: VakinhaUI.textBold,
+                        style: VakinhaUI.textBold.copyWith(fontSize: 18),
                       ),
                       trailing: Obx(() {
                         return Text(
                           FormatterHelper.formatCurrency(controller.totalPrice),
-                          style: VakinhaUI.textBold,
+                          style: VakinhaUI.textBold.copyWith(
+                            fontWeight: FontWeight.w800,
+                            fontSize: 20,
+                          ),
                         );
                       }),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 30,
                     ),
                     Center(
                       child: SizedBox(
@@ -90,7 +93,7 @@ class ProductDetailPage extends GetView<ProductDetailController> {
                           label: controller.alreadyAdded
                               ? 'ATUALIZAR'
                               : 'ADICIONAR',
-                          onPressed: controller.addProductinShoppingCard,
+                          onPressed: controller.addProductInShoppingCard,
                         ),
                       ),
                     )

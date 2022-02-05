@@ -17,7 +17,7 @@ class ProductTile extends StatelessWidget {
         Get.toNamed('/product_detail', arguments: product);
       },
       child: Container(
-        margin: const EdgeInsets.all(10),
+        margin: const EdgeInsets.all(13),
         height: 80,
         child: Row(
           children: [
@@ -45,7 +45,7 @@ class ProductTile extends StatelessWidget {
                   children: [
                     Text(
                       product.name,
-                      style: VakinhaUI.textBold,
+                      style: VakinhaUI.textBold.copyWith(fontSize: 17),
                     ),
                     Text(FormatterHelper.formatCurrency(product.price)),
                   ],

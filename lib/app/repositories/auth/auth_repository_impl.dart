@@ -14,7 +14,7 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<UserModel> register(String name, String email, String password) async {
-    var message;
+    String message;
     final result = await _restClient.post('/auth/register', {
       "name": name,
       "email": email,

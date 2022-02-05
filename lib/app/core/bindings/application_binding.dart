@@ -9,6 +9,6 @@ class ApplicationBinding implements Bindings {
       () => RestClient(),
       fenix: true,
     );
-    Get.lazyPut<dynamic>(() => ShoppingCardService());
+    Get.lazyPut(() => ShoppingCardService());
   }
 }

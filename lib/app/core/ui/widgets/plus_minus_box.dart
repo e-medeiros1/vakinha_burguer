@@ -29,7 +29,7 @@ class PlusMinusBox extends StatelessWidget {
     return Material(
       elevation: elevated ? 5 : 0,
       borderRadius: BorderRadius.circular(20),
-      shadowColor: Colors.black26,
+      shadowColor: Colors.black38,
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -44,7 +44,7 @@ class PlusMinusBox extends StatelessWidget {
               visible: label != null,
               child: Text(
                 label ?? '',
-                style: const TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 16),
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -54,7 +54,12 @@ class PlusMinusBox extends StatelessWidget {
                   onPressed: minusCallback,
                   label: '-',
                 ),
-                Text('$quantity'),
+                Text(
+                  '$quantity',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 VakinhaRoundedButton(
                   onPressed: plusCallback,
                   label: '+',
@@ -72,6 +77,7 @@ class PlusMinusBox extends StatelessWidget {
                 FormatterHelper.formatCurrency(
                   calculateTotal ? price * quantity : price,
                 ),
+                style: const TextStyle(fontSize: 15),
               ),
             ),
           ],

@@ -57,7 +57,7 @@
 
    ---  
    
-   >Esse projeto foi desenvolvido ❤️ por **[@emedeiros](https://www.linkedin.com/in/erimedeiros/)**, com o instrutor **[@RodrigoRahman](https://www.linkedin.com/in/rodrigo-rahman/)**, na #DartWeek da **[Academia do Flutter](http://academiadoflutter.com.br)**.<br> 
+   >Esse projeto foi desenvolvido ❤️ por **[@erimedeiros](https://www.linkedin.com/in/erimedeiros/)**, com o instrutor **[@RodrigoRahman](https://www.linkedin.com/in/rodrigo-rahman/)**, na #DartWeek da **[Academia do Flutter](http://academiadoflutter.com.br)**.<br> 
 
    ---
   

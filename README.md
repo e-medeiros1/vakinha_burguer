@@ -46,7 +46,7 @@
 
    ```
    - Clone this repository:
-   $ git clone https://github.com/e-medeiros1/vakinha-burguer vakinha-burguer
+   $ git clone https://github.com/e-medeiros1/vakinha-burguer 
    - Enter in directory:
    $ cd vakinha-burguer
    - For install dependencies:

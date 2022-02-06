@@ -3,8 +3,6 @@
 </p>
 <h1 align="center"> Vakinha burger </h1>  
 
-
-
 <h2 align="center"> App de delivery no padrão MVVM, usando GetX e com um pix funcional! </h2>  
 <h2> Sobre </h2>
 <p >
@@ -30,9 +28,16 @@
 
 <p>
       <img src="https://user-images.githubusercontent.com/73318684/152662300-35678ba2-42c8-444e-88ee-d1079a461790.gif" width="250" alt="Logo Vakinha"/>
+</p>  
+
+- Menu, página de detalhes e carrinho de compra 
+
+<p>
+      <img src="https://user-images.githubusercontent.com/73318684/152663819-8c3a81e4-b346-4bda-888a-8a0ef2f4a8e1.gif" width="250" alt="Logo Vakinha"/>
 </p>
 
+   ---
 
-<h4 align="center"> 
-	🚀  Projeto concluído!  🚀
-</h4>
+   >This project was developed with ❤️ by **[@e-medeiros1](https://www.linkedin.com/in/erimedeiros/)**, with the instructor **[@RodrigoRahman](https://www.linkedin.com/in/rodrigo-rahman/)**, na #DartWeek from **[Academia do Flutter](http://academiadoflutter.com.br)**.<br>
+  
+---

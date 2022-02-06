@@ -6,7 +6,7 @@
 <h2 align="center"> App de delivery no padrão MVVM, usando GetX e com um pix funcional! </h2>  
 <h2> Sobre </h2>
 <p >
-  Esse projeto foi desenvolvido na DartWeek dos dias 1 ao dia 6 de janeiro, uma semana intensa, com muito foco e apoio da comunidade da academia do flutter.
+  Esse projeto foi desenvolvido na DartWeek dos dias 1 ao dia 6 de fevereiro, uma semana intensa, com muito foco e apoio da comunidade da academia do flutter.
 </p>  
 
 ### Funcionalidades

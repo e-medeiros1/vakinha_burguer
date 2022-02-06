@@ -18,7 +18,7 @@
 - [x] Tela de detalhes
 - [x] Carrinho de compras
 - [x] Validação de informações
-- [x] Pagamento com o pix  
+- [x] Pagamento com o pix(API Gerencianet)  
 
 
 <h2> Telas </h2>  

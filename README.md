@@ -40,7 +40,24 @@
 
 <p>
       <img src="https://user-images.githubusercontent.com/73318684/152663968-145cbc9c-2d95-44fd-86ba-a4404ff3f5cc.gif" width="250" alt="Logo Vakinha"/>
-</p>
+</p>  
+
+<h2 align="center">How to Use 🤔</h2>
+
+   ```
+   First of all, correctly configure the Flutter development environment on your machine, see https://flutter.dev/docs/get-started/install
+   
+   - Clone this repository:
+   $ git clone https://github.com/e-medeiros1/vakinha-burguer vakinha-burguer
+   - Enter in directory:
+   $ cd vakinha-burguer
+   - For install dependencies:
+   $ flutter pub get
+   - Run the app: 
+   $ flutter run
+   ```
+
+---
 
    ---  
    

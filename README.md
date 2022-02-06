@@ -36,8 +36,13 @@
       <img src="https://user-images.githubusercontent.com/73318684/152663819-8c3a81e4-b346-4bda-888a-8a0ef2f4a8e1.gif" width="250" alt="Logo Vakinha"/>
 </p>
 
+- Tela de confirmação e pix
+
+<p>
+      <img src="https://user-images.githubusercontent.com/73318684/152663968-145cbc9c-2d95-44fd-86ba-a4404ff3f5cc.gif" width="250" alt="Logo Vakinha"/>
+</p>
    ---
 
-   >This project was developed with ❤️ by **[@e-medeiros1](https://www.linkedin.com/in/erimedeiros/)**, with the instructor **[@RodrigoRahman](https://www.linkedin.com/in/rodrigo-rahman/)**, na #DartWeek from **[Academia do Flutter](http://academiadoflutter.com.br)**.<br>
+   >Esse projeto foi desenvolvido ❤️ por **[@e-medeiros1](https://www.linkedin.com/in/erimedeiros/)**, com o instrutor **[@RodrigoRahman](https://www.linkedin.com/in/rodrigo-rahman/)**, na #DartWeek da **[Academia do Flutter](http://academiadoflutter.com.br)**.<br>
   
 ---
